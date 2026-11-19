@@ -6,11 +6,19 @@ import java.util.List;
 import java.util.Optional;
 
 public class User implements Verifiable {
+    private static int lastId = 0;
+
+    private final int id;
     private String name;
     private Integer age;
     private List<NameChangedHandler> nameChangedHandlers;
 
-    User(String name, Integer age) {
+    public User(String name, Integer age) {
+        this(lastId++, name, age);
+    }
+
+    User(int id, String name, Integer age) {
+        this.id = id;
         this.name = name;
         this.age = age;
     }
@@ -25,6 +33,10 @@ public class User implements Verifiable {
 
     public static User withPersonalData(String name, Integer age) {
         return new User(name, age);
+    }
+
+    public int getId() {
+        return id;
     }
 
     public String getName() {
