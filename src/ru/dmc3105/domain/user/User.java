@@ -32,6 +32,9 @@ public class User implements Verifiable {
     }
 
     public static User withPersonalData(String name, Integer age) {
+        if (name == null || name.isEmpty()) {
+            return unknown();
+        }
         return new User(name, age);
     }
 
@@ -63,6 +66,15 @@ public class User implements Verifiable {
 
     public void addNameChangedHandler(NameChangedHandler nameChangedHandler) {
         nameChangedHandlers.add(nameChangedHandler);
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", age=" + age +
+                '}';
     }
 
     public static UserBuilder builder() { return new UserBuilder(); }
