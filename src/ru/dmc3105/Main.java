@@ -1,5 +1,5 @@
 import ru.dmc3105.Verifiable;
-import ru.dmc3105.user.User;
+import ru.dmc3105.domain.user.User;
 
 
 void main() {

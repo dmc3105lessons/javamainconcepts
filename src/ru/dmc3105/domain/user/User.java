@@ -1,4 +1,4 @@
-package ru.dmc3105.user;
+package ru.dmc3105.domain.user;
 
 import ru.dmc3105.Verifiable;
 
