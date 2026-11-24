@@ -5,6 +5,7 @@ import ru.dmc3105.Verifiable;
 import java.util.List;
 import java.util.Optional;
 
+@DomainModel("someuser")
 public class User implements Verifiable {
     private static int lastId = 0;
 
